@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
   component: Reel,
 });
 
-const INTERVAL = 2500;
+const INTERVAL = 1600;
 
 function shuffle<T>(items: T[], avoidFirst?: T): T[] {
   const out = [...items];
@@ -134,7 +134,7 @@ function Reel() {
           alt=""
           aria-hidden={i !== current}
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-100 ease-linear"
+          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-75 ease-linear"
           style={{ opacity: i === current ? 1 : 0 }}
         />
       ))}
