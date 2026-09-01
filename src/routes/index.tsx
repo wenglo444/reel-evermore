@@ -134,7 +134,7 @@ function Reel() {
           alt=""
           aria-hidden={i !== current}
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-75 ease-linear"
+          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-linear"
           style={{ opacity: i === current ? 1 : 0 }}
         />
       ))}
