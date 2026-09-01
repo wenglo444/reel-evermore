@@ -18,6 +18,15 @@ import pArcade from "@/assets/8beec733-1e44-4b9c-b296-ed0fc0cfc7fd.jpg.asset.jso
 import pStall from "@/assets/IMG_2270.JPG.asset.json";
 import pCart from "@/assets/15e22118-e6c4-43ac-bd3f-782ac0937d5d.jpg.asset.json";
 import pTable from "@/assets/IMG_2284.JPG.asset.json";
+import pSinks from "@/assets/000003250017.jpg.asset.json";
+import pCrate from "@/assets/d8d536d9-00de-450c-b7ca-052ae7d7ff79.jpg.asset.json";
+import pBlueStool from "@/assets/5b93bf96-a9d5-4b30-9c8c-e83314ededd5.jpg.asset.json";
+import pStreet from "@/assets/561ac9cc-22a1-40b3-8d48-549b000fe5ef.jpg.asset.json";
+import pStools from "@/assets/38adbfbd-bc8f-4dd8-b46b-38962e846d5c.jpg.asset.json";
+import pPrintShop from "@/assets/97f10a6c-045c-4efe-b8df-4b888223dccf.jpg.asset.json";
+import pBoxes from "@/assets/ea9c39d5-052a-454c-88bb-28b5a39bbce3.jpg.asset.json";
+import pCorridor from "@/assets/0f72940d-9f94-4ab7-be35-8d6659423ebf.jpg.asset.json";
+import pFlowers from "@/assets/b6b268a7-e7ef-4d82-8b30-6b823b98b9c5.jpg.asset.json";
 
 export type Photograph = {
   /** Public image URL */
