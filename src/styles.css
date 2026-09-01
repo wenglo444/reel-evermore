@@ -164,16 +164,19 @@
 }
 
 @utility reel-caption {
-  font-family: "Archivo", var(--font-reel);
-  font-size: clamp(2.4rem, 7.4vw, 6rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 1.02;
+  font-family: "Anton", "Archivo", var(--font-reel);
+  font-size: clamp(2.6rem, 8.5vw, 7rem);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 0.98;
+  text-transform: uppercase;
   text-wrap: balance;
 }
 
 @utility reel-link {
+  font-family: "Archivo", var(--font-reel);
   font-size: 0.8125rem;
+  font-weight: 700;
   letter-spacing: 0.01em;
   opacity: 0.9;
   transition: opacity 150ms ease;
