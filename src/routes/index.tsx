@@ -28,10 +28,10 @@ function shuffle<T>(items: T[], avoidFirst?: T): T[] {
   const out = [...items];
   for (let i = out.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [out[i], out[j]] = [out[j], out[i]];
+    [out[i], out[j]] = [out[j]!, out[i]!];
   }
   if (avoidFirst !== undefined && out.length > 1 && out[0] === avoidFirst) {
-    [out[0], out[1]] = [out[1], out[0]];
+    [out[0], out[1]] = [out[1]!, out[0]!];
   }
   return out;
 }
@@ -97,11 +97,11 @@ function Reel() {
     };
     let startY = 0;
     const onTouchStart = (e: TouchEvent) => {
-      startY = e.touches[0].clientY;
+      startY = e.touches[0]!.clientY;
     };
     const onTouchMove = (e: TouchEvent) => {
-      if (Math.abs(e.touches[0].clientY - startY) > 40) {
-        startY = e.touches[0].clientY;
+      if (Math.abs(e.touches[0]!.clientY - startY) > 40) {
+        startY = e.touches[0]!.clientY;
         step();
       }
     };
@@ -123,7 +123,7 @@ function Reel() {
   }, [advance]);
 
   const current = queue[pos] ?? 0;
-  const upcoming = [1, 2, 3].map((o) => queue[(pos + o) % queue.length]);
+  const upcoming = [1, 2, 3].map((o) => queue[(pos + o) % queue.length] ?? 0);
 
   return (
     <div className="fixed inset-0 overflow-hidden bg-background">
