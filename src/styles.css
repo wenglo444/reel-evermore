@@ -132,13 +132,52 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+:root {
+  /* Reel design system */
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.97 0 0);
+  --reel-accent: oklch(0.89 0.19 103);
+  --font-reel: "Helvetica Neue", Helvetica, Arial, "Inter", system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-reel-accent: var(--reel-accent);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
   }
 
+  html,
   body {
+    height: 100%;
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-reel);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    overscroll-behavior: none;
   }
 }
+
+@utility reel-caption {
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+@utility reel-link {
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  opacity: 0.9;
+  transition: opacity 150ms ease;
+}
+
+.reel-link:hover {
+  opacity: 0.55;
+}
+
