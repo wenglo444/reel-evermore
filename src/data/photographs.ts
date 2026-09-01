@@ -53,4 +53,13 @@ export const photographs: Photograph[] = [
   { src: pStall.url, title: "Stall" },
   { src: pCart.url, title: "Cart" },
   { src: pTable.url, title: "Table" },
+  { src: pSinks.url, title: "Sinks" },
+  { src: pCrate.url, title: "Crate" },
+  { src: pBlueStool.url, title: "Blue stool" },
+  { src: pStreet.url, title: "Street" },
+  { src: pStools.url, title: "Stools" },
+  { src: pPrintShop.url, title: "Print shop" },
+  { src: pBoxes.url, title: "Boxes" },
+  { src: pCorridor.url, title: "Corridor" },
+  { src: pFlowers.url, title: "Flowers" },
 ];
