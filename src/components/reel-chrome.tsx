@@ -37,7 +37,11 @@ export function Nav() {
 export function Caption() {
   return (
     <p className="pointer-events-none fixed inset-x-0 top-1/2 z-30 -translate-y-1/2 px-6 text-center text-reel-accent reel-caption">
-      A Place on Google Earth?
+      A place
+      <br />
+      On
+      <br />
+      Google earth?
     </p>
   );
 }
