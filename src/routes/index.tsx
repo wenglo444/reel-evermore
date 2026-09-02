@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
   component: Reel,
 });
 
-const INTERVAL = 500;
+const INTERVAL = 800;
 
 function shuffle<T>(items: T[], avoidFirst?: T): T[] {
   const out = [...items];
