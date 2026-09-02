@@ -6,13 +6,13 @@ import { Caption, Nav } from "@/components/reel-chrome";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "A Place on Google Earth?" },
+      { title: "A PLACE ON GOOGLE EARTH" },
       {
         name: "description",
         content:
           "An endless reel of photographs. One image at a time, full screen, forever.",
       },
-      { property: "og:title", content: "A Place on Google Earth?" },
+      { property: "og:title", content: "A PLACE ON GOOGLE EARTH" },
       {
         property: "og:description",
         content: "An endless reel of photographs, one image at a time.",

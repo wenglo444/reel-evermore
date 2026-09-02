@@ -164,11 +164,12 @@
 }
 
 @utility reel-caption {
-  font-family: Futura, "Futura PT", "Century Gothic", var(--font-reel);
+  font-family: "Montserrat", var(--font-reel);
   font-size: clamp(2.6rem, 8.5vw, 7rem);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1.05;
+  text-transform: uppercase;
 }
 
 @utility reel-link {
