@@ -4,8 +4,13 @@
 import p002 from "@/assets/002.jpeg.asset.json";
 import p003 from "@/assets/003.jpeg.asset.json";
 import p004 from "@/assets/004.jpeg.asset.json";
+import p005 from "@/assets/005.jpeg.asset.json";
 import p006 from "@/assets/006.jpeg.asset.json";
+import p007 from "@/assets/007.jpeg.asset.json";
 import p009 from "@/assets/009.jpeg.asset.json";
+import p012 from "@/assets/012.jpeg.asset.json";
+import p013 from "@/assets/013.jpeg.asset.json";
+import p018 from "@/assets/018.jpeg.asset.json";
 import pSigns from "@/assets/11d70e3d-3198-4c06-9c5f-120f331675d9.jpg.asset.json";
 import pDucks from "@/assets/805bbfa0-b8f1-422e-831f-2d409f03129a.jpg.asset.json";
 import pShop from "@/assets/IMG_2287.JPG.asset.json";
@@ -24,9 +29,14 @@ import pBlueStool from "@/assets/5b93bf96-a9d5-4b30-9c8c-e83314ededd5.jpg.asset.
 import pStreet from "@/assets/561ac9cc-22a1-40b3-8d48-549b000fe5ef.jpg.asset.json";
 import pStools from "@/assets/38adbfbd-bc8f-4dd8-b46b-38962e846d5c.jpg.asset.json";
 import pPrintShop from "@/assets/97f10a6c-045c-4efe-b8df-4b888223dccf.jpg.asset.json";
+import pPrintShop2 from "@/assets/97f10a6c-045c-4efe-b8df-4b888223dccf-2.jpg.asset.json";
 import pBoxes from "@/assets/ea9c39d5-052a-454c-88bb-28b5a39bbce3.jpg.asset.json";
 import pCorridor from "@/assets/0f72940d-9f94-4ab7-be35-8d6659423ebf.jpg.asset.json";
 import pFlowers from "@/assets/b6b268a7-e7ef-4d82-8b30-6b823b98b9c5.jpg.asset.json";
+import pSojuCrates from "@/assets/4cad14f7-8188-4c06-8b03-58ea44152b36.jpg.asset.json";
+import pMarketBack from "@/assets/16e752a9-ad5b-4dfb-9e25-956dee24a180.jpg.asset.json";
+import pLilyPad from "@/assets/65548db7-be2c-42fd-978d-dcfb0f662804.jpg.asset.json";
+import pNightAlley from "@/assets/IMG_2275.JPG.asset.json";
 
 export type Photograph = {
   /** Public image URL */
@@ -39,8 +49,13 @@ export const photographs: Photograph[] = [
   { src: p002.url, title: "Offerings" },
   { src: p003.url, title: "Numbers" },
   { src: p004.url, title: "Canal" },
+  { src: p005.url, title: "House on stilts" },
   { src: p006.url, title: "Cat" },
+  { src: p007.url, title: "Temple guardian" },
   { src: p009.url, title: "Branches" },
+  { src: p012.url, title: "Temple door" },
+  { src: p013.url, title: "Buddha and naga" },
+  { src: p018.url, title: "Street scene" },
   { src: pSigns.url, title: "Gold signs" },
   { src: pDucks.url, title: "Ducks" },
   { src: pShop.url, title: "Shopfront" },
@@ -59,7 +74,12 @@ export const photographs: Photograph[] = [
   { src: pStreet.url, title: "Street" },
   { src: pStools.url, title: "Stools" },
   { src: pPrintShop.url, title: "Print shop" },
+  { src: pPrintShop2.url, title: "Print shop 2" },
   { src: pBoxes.url, title: "Boxes" },
   { src: pCorridor.url, title: "Corridor" },
   { src: pFlowers.url, title: "Flowers" },
+  { src: pSojuCrates.url, title: "Soju crates" },
+  { src: pMarketBack.url, title: "Market back" },
+  { src: pLilyPad.url, title: "Lily pad" },
+  { src: pNightAlley.url, title: "Night alley" },
 ];
