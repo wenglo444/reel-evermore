@@ -30,6 +30,16 @@ import p036 from "@/assets/036.jpg.asset.json";
 import p037 from "@/assets/037.jpg.asset.json";
 import p038 from "@/assets/038.jpg.asset.json";
 import p039 from "@/assets/039.jpg.asset.json";
+import p041 from "@/assets/041.jpg.asset.json";
+import p042 from "@/assets/042.jpg.asset.json";
+import p043 from "@/assets/043.jpg.asset.json";
+import p044 from "@/assets/044.jpg.asset.json";
+import p045 from "@/assets/045.JPG.asset.json";
+import p046 from "@/assets/046.JPG.asset.json";
+import p047 from "@/assets/047.JPG.asset.json";
+import p048 from "@/assets/048.JPG.asset.json";
+import p049 from "@/assets/049.JPG.asset.json";
+import p050 from "@/assets/050.jpg.asset.json";
 
 export type Photograph = {
   /** Public image URL */
@@ -68,4 +78,14 @@ export const photographs: Photograph[] = [
   { src: p037.url, title: "Shrimp sign" },
   { src: p038.url, title: "Market LED" },
   { src: p039.url, title: "Dark corridor" },
+  { src: p041.url, title: "Soju crates" },
+  { src: p042.url, title: "Corridor LED" },
+  { src: p043.url, title: "Color crates" },
+  { src: p044.url, title: "Go board" },
+  { src: p045.url, title: "Korean stall night" },
+  { src: p046.url, title: "Korean alley night" },
+  { src: p047.url, title: "Market stalls" },
+  { src: p048.url, title: "Lantern" },
+  { src: p049.url, title: "Fish bags" },
+  { src: p050.url, title: "Ducks" },
 ];
