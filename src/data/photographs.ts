@@ -3,7 +3,10 @@
 // and add an entry here. Titles are internal only and never displayed.
 import p010 from "@/assets/010.jpeg.asset.json";
 import p011 from "@/assets/011.jpeg.asset.json";
+import p012_2 from "@/assets/012-2.jpeg.asset.json";
 import p013 from "@/assets/013-2.jpeg.asset.json";
+import p014 from "@/assets/014.jpeg.asset.json";
+import p016 from "@/assets/016.jpeg.asset.json";
 import p017 from "@/assets/017.jpeg.asset.json";
 import p018 from "@/assets/018-2.jpeg.asset.json";
 import p019 from "@/assets/019.jpeg.asset.json";
@@ -20,6 +23,13 @@ import p029 from "@/assets/029.jpg.asset.json";
 import p030 from "@/assets/030.jpg.asset.json";
 import p031 from "@/assets/031.jpg.asset.json";
 import p032 from "@/assets/032.jpg.asset.json";
+import p033 from "@/assets/033.jpg.asset.json";
+import p034 from "@/assets/034.jpg.asset.json";
+import p035 from "@/assets/035.jpg.asset.json";
+import p036 from "@/assets/036.jpg.asset.json";
+import p037 from "@/assets/037.jpg.asset.json";
+import p038 from "@/assets/038.jpg.asset.json";
+import p039 from "@/assets/039.jpg.asset.json";
 
 export type Photograph = {
   /** Public image URL */
@@ -31,7 +41,10 @@ export type Photograph = {
 export const photographs: Photograph[] = [
   { src: p010.url, title: "One way signs" },
   { src: p011.url, title: "Bronx local" },
+  { src: p012_2.url, title: "Temple guardians" },
   { src: p013.url, title: "Ice cream truck" },
+  { src: p014.url, title: "Ganesha relief" },
+  { src: p016.url, title: "Plastic chairs" },
   { src: p017.url, title: "Hot pretzels" },
   { src: p018.url, title: "City steam" },
   { src: p019.url, title: "Food cart" },
@@ -48,4 +61,11 @@ export const photographs: Photograph[] = [
   { src: p030.url, title: "Flowers boxes" },
   { src: p031.url, title: "Plum boxes" },
   { src: p032.url, title: "Crates" },
+  { src: p033.url, title: "Stacked chairs" },
+  { src: p034.url, title: "Tokyo alley" },
+  { src: p035.url, title: "Korean stall" },
+  { src: p036.url, title: "Stacked frames" },
+  { src: p037.url, title: "Shrimp sign" },
+  { src: p038.url, title: "Market LED" },
+  { src: p039.url, title: "Dark corridor" },
 ];
