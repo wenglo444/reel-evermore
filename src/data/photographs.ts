@@ -40,6 +40,16 @@ import p047 from "@/assets/047.JPG.asset.json";
 import p048 from "@/assets/048.JPG.asset.json";
 import p049 from "@/assets/049.JPG.asset.json";
 import p050 from "@/assets/050.jpg.asset.json";
+import p051 from "@/assets/051.JPG.asset.json";
+import p052 from "@/assets/052.JPG.asset.json";
+import p053 from "@/assets/053.jpg.asset.json";
+import p054 from "@/assets/054.jpg.asset.json";
+import p055 from "@/assets/055.jpg.asset.json";
+import p009_2 from "@/assets/009-2.jpeg.asset.json";
+import p008 from "@/assets/008.jpeg.asset.json";
+import p007_2 from "@/assets/007-2.jpeg.asset.json";
+import p006_2 from "@/assets/006-2.jpeg.asset.json";
+import p005_2 from "@/assets/005-2.jpeg.asset.json";
 
 export type Photograph = {
   /** Public image URL */
@@ -88,4 +98,14 @@ export const photographs: Photograph[] = [
   { src: p048.url, title: "Lantern" },
   { src: p049.url, title: "Fish bags" },
   { src: p050.url, title: "Ducks" },
+  { src: p051.url, title: "Fish bags 2" },
+  { src: p052.url, title: "Table C20" },
+  { src: p053.url, title: "Street cart" },
+  { src: p054.url, title: "Stools" },
+  { src: p055.url, title: "Door handle" },
+  { src: p009_2.url, title: "Branches" },
+  { src: p008.url, title: "Rooster" },
+  { src: p007_2.url, title: "Rahu" },
+  { src: p006_2.url, title: "Shrine cat" },
+  { src: p005_2.url, title: "River shrine" },
 ];
