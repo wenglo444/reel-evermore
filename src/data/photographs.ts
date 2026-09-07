@@ -50,12 +50,24 @@ import p008 from "@/assets/008.jpeg.asset.json";
 import p007_2 from "@/assets/007-2.jpeg.asset.json";
 import p006_2 from "@/assets/006-2.jpeg.asset.json";
 import p005_2 from "@/assets/005-2.jpeg.asset.json";
+import p001_1 from "@/assets/001_1.jpeg.asset.json";
+import p001_2v from "@/assets/001_2.jpeg.asset.json";
+import p007_3 from "@/assets/007-3.jpeg.asset.json";
+import p006_3 from "@/assets/006-3.jpeg.asset.json";
+import p005_3 from "@/assets/005-3.jpeg.asset.json";
+import p004_2 from "@/assets/004-2.jpeg.asset.json";
+import p003_2 from "@/assets/003-2.jpeg.asset.json";
+import p002_2 from "@/assets/002-2.jpeg.asset.json";
+import p001_2b from "@/assets/001-2.jpeg.asset.json";
+import p056 from "@/assets/056.jpg.asset.json";
 
 export type Photograph = {
   /** Public image URL */
   src: string;
   /** Internal name only — never rendered */
   title?: string;
+  /** Black-and-white photograph — the reel always opens on one of these */
+  bw?: boolean;
 };
 
 export const photographs: Photograph[] = [
