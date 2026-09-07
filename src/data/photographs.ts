@@ -50,30 +50,42 @@ import p008 from "@/assets/008.jpeg.asset.json";
 import p007_2 from "@/assets/007-2.jpeg.asset.json";
 import p006_2 from "@/assets/006-2.jpeg.asset.json";
 import p005_2 from "@/assets/005-2.jpeg.asset.json";
+import p001_1 from "@/assets/001_1.jpeg.asset.json";
+import p001_2v from "@/assets/001_2.jpeg.asset.json";
+import p007_3 from "@/assets/007-3.jpeg.asset.json";
+import p006_3 from "@/assets/006-3.jpeg.asset.json";
+import p005_3 from "@/assets/005-3.jpeg.asset.json";
+import p004_2 from "@/assets/004-2.jpeg.asset.json";
+import p003_2 from "@/assets/003-2.jpeg.asset.json";
+import p002_2 from "@/assets/002-2.jpeg.asset.json";
+import p001_2b from "@/assets/001-2.jpeg.asset.json";
+import p056 from "@/assets/056.jpg.asset.json";
 
 export type Photograph = {
   /** Public image URL */
   src: string;
   /** Internal name only — never rendered */
   title?: string;
+  /** Black-and-white photograph — the reel always opens on one of these */
+  bw?: boolean;
 };
 
 export const photographs: Photograph[] = [
-  { src: p010.url, title: "One way signs" },
-  { src: p011.url, title: "Bronx local" },
-  { src: p012_2.url, title: "Temple guardians" },
-  { src: p013.url, title: "Ice cream truck" },
-  { src: p014.url, title: "Ganesha relief" },
-  { src: p016.url, title: "Plastic chairs" },
-  { src: p017.url, title: "Hot pretzels" },
-  { src: p018.url, title: "City steam" },
-  { src: p019.url, title: "Food cart" },
-  { src: p020.url, title: "Sinks" },
-  { src: p021.url, title: "Clock and shoes" },
-  { src: p022.url, title: "Flowers" },
-  { src: p023.url, title: "Wires 1" },
-  { src: p024.url, title: "Wires 2" },
-  { src: p025.url, title: "Kick" },
+  { src: p010.url, title: "One way signs", bw: true },
+  { src: p011.url, title: "Bronx local", bw: true },
+  { src: p012_2.url, title: "Temple guardians", bw: true },
+  { src: p013.url, title: "Ice cream truck", bw: true },
+  { src: p014.url, title: "Ganesha relief", bw: true },
+  { src: p016.url, title: "Plastic chairs", bw: true },
+  { src: p017.url, title: "Hot pretzels", bw: true },
+  { src: p018.url, title: "City steam", bw: true },
+  { src: p019.url, title: "Food cart", bw: true },
+  { src: p020.url, title: "Sinks", bw: true },
+  { src: p021.url, title: "Clock and shoes", bw: true },
+  { src: p022.url, title: "Flowers", bw: true },
+  { src: p023.url, title: "Wires 1", bw: true },
+  { src: p024.url, title: "Wires 2", bw: true },
+  { src: p025.url, title: "Kick", bw: true },
   { src: p026.url, title: "Blue stool" },
   { src: p027.url, title: "Pink stool" },
   { src: p028.url, title: "Juici Fruit" },
@@ -82,30 +94,40 @@ export const photographs: Photograph[] = [
   { src: p031.url, title: "Plum boxes" },
   { src: p032.url, title: "Crates" },
   { src: p033.url, title: "Stacked chairs" },
-  { src: p034.url, title: "Tokyo alley" },
+  { src: p034.url, title: "Tokyo alley", bw: true },
   { src: p035.url, title: "Korean stall" },
   { src: p036.url, title: "Stacked frames" },
   { src: p037.url, title: "Shrimp sign" },
   { src: p038.url, title: "Market LED" },
   { src: p039.url, title: "Dark corridor" },
-  { src: p041.url, title: "Soju crates" },
-  { src: p042.url, title: "Corridor LED" },
+  { src: p041.url, title: "Soju crates", bw: true },
+  { src: p042.url, title: "Corridor LED", bw: true },
   { src: p043.url, title: "Color crates" },
   { src: p044.url, title: "Go board" },
-  { src: p045.url, title: "Korean stall night" },
-  { src: p046.url, title: "Korean alley night" },
-  { src: p047.url, title: "Market stalls" },
-  { src: p048.url, title: "Lantern" },
-  { src: p049.url, title: "Fish bags" },
+  { src: p045.url, title: "Korean stall night", bw: true },
+  { src: p046.url, title: "Korean alley night", bw: true },
+  { src: p047.url, title: "Market stalls", bw: true },
+  { src: p048.url, title: "Lantern", bw: true },
+  { src: p049.url, title: "Fish bags", bw: true },
   { src: p050.url, title: "Ducks" },
   { src: p051.url, title: "Fish bags 2" },
   { src: p052.url, title: "Table C20" },
   { src: p053.url, title: "Street cart" },
   { src: p054.url, title: "Stools" },
   { src: p055.url, title: "Door handle" },
-  { src: p009_2.url, title: "Branches" },
-  { src: p008.url, title: "Rooster" },
-  { src: p007_2.url, title: "Rahu" },
-  { src: p006_2.url, title: "Shrine cat" },
-  { src: p005_2.url, title: "River shrine" },
+  { src: p009_2.url, title: "Branches", bw: true },
+  { src: p008.url, title: "Rooster", bw: true },
+  { src: p007_2.url, title: "Rahu", bw: true },
+  { src: p006_2.url, title: "Shrine cat", bw: true },
+  { src: p005_2.url, title: "River shrine", bw: true },
+  { src: p001_1.url, title: "Ganesha workshop", bw: true },
+  { src: p001_2v.url, title: "Naga head", bw: true },
+  { src: p007_3.url, title: "Rahu close", bw: true },
+  { src: p006_3.url, title: "Shrine cat 2", bw: true },
+  { src: p005_3.url, title: "River shrine 2", bw: true },
+  { src: p004_2.url, title: "River boat", bw: true },
+  { src: p003_2.url, title: "Buddha numbers", bw: true },
+  { src: p002_2.url, title: "Fanta bottles", bw: true },
+  { src: p001_2b.url, title: "Ganesha workshop 2", bw: true },
+  { src: p056.url, title: "Walking", bw: true },
 ];
