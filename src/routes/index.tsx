@@ -24,6 +24,10 @@ export const Route = createFileRoute("/")({
 
 const INTERVAL = 800;
 
+const bwIndexes = photographs
+  .map((p, i) => (p.bw ? i : -1))
+  .filter((i) => i >= 0);
+
 function shuffle<T>(items: T[], avoidFirst?: T): T[] {
   const out = [...items];
   for (let i = out.length - 1; i > 0; i--) {
@@ -36,17 +40,31 @@ function shuffle<T>(items: T[], avoidFirst?: T): T[] {
   return out;
 }
 
+// Shuffled order that always opens on a black-and-white photograph.
+function shuffledQueue(avoidFirst?: number): number[] {
+  const out = shuffle(photographs.map((_, i) => i), avoidFirst);
+  if (bwIndexes.length > 0 && !photographs[out[0]!]?.bw) {
+    const pick =
+      bwIndexes[Math.floor(Math.random() * bwIndexes.length)]!;
+    const at = out.indexOf(pick);
+    [out[0], out[at]] = [out[at]!, out[0]!];
+  }
+  return out;
+}
+
 function Reel() {
-  const [queue, setQueue] = useState<number[]>(() =>
-    photographs.map((_, i) => i),
-  );
+  // SSR-stable initial order, already opening on a black-and-white image.
+  const [queue, setQueue] = useState<number[]>(() => {
+    const first = bwIndexes[0] ?? 0;
+    return [first, ...photographs.map((_, i) => i).filter((i) => i !== first)];
+  });
   const [pos, setPos] = useState(0);
   const queueRef = useRef(queue);
   queueRef.current = queue;
 
   // Randomize only after mount to keep SSR/hydration stable.
   useEffect(() => {
-    setQueue(shuffle(photographs.map((_, i) => i)));
+    setQueue(shuffledQueue());
   }, []);
 
   const advance = useCallback(() => {
@@ -54,7 +72,7 @@ function Reel() {
       const next = p + 1;
       if (next < queueRef.current.length) return next;
       const last = queueRef.current[queueRef.current.length - 1];
-      setQueue(shuffle(photographs.map((_, i) => i), last));
+      setQueue(shuffledQueue(last));
       return 0;
     });
   }, []);
