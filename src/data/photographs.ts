@@ -24,7 +24,7 @@ import p030 from "@/assets/030.jpg.asset.json";
 import p031 from "@/assets/031.jpg.asset.json";
 import p032 from "@/assets/032.jpg.asset.json";
 import p033 from "@/assets/033.jpg.asset.json";
-import p034 from "@/assets/034.jpg.asset.json";
+
 import p035 from "@/assets/035.jpg.asset.json";
 import p036 from "@/assets/036.jpg.asset.json";
 import p037 from "@/assets/037.jpg.asset.json";
@@ -46,12 +46,10 @@ import p053 from "@/assets/053.jpg.asset.json";
 import p054 from "@/assets/054.jpg.asset.json";
 import p055 from "@/assets/055.jpg.asset.json";
 import p009_2 from "@/assets/009-2.jpeg.asset.json";
-import p008 from "@/assets/008.jpeg.asset.json";
+
 import p007_2 from "@/assets/007-2.jpeg.asset.json";
 import p006_2 from "@/assets/006-2.jpeg.asset.json";
 import p005_2 from "@/assets/005-2.jpeg.asset.json";
-import p001_1 from "@/assets/001_1.jpeg.asset.json";
-import p001_2v from "@/assets/001_2.jpeg.asset.json";
 import p007_3 from "@/assets/007-3.jpeg.asset.json";
 import p006_3 from "@/assets/006-3.jpeg.asset.json";
 import p005_3 from "@/assets/005-3.jpeg.asset.json";
@@ -94,7 +92,7 @@ export const photographs: Photograph[] = [
   { src: p031.url, title: "Plum boxes" },
   { src: p032.url, title: "Crates" },
   { src: p033.url, title: "Stacked chairs" },
-  { src: p034.url, title: "Tokyo alley", bw: true },
+  
   { src: p035.url, title: "Korean stall" },
   { src: p036.url, title: "Stacked frames" },
   { src: p037.url, title: "Shrimp sign" },
@@ -116,12 +114,10 @@ export const photographs: Photograph[] = [
   { src: p054.url, title: "Stools" },
   { src: p055.url, title: "Door handle" },
   { src: p009_2.url, title: "Branches", bw: true },
-  { src: p008.url, title: "Rooster", bw: true },
+  
   { src: p007_2.url, title: "Rahu", bw: true },
   { src: p006_2.url, title: "Shrine cat", bw: true },
   { src: p005_2.url, title: "River shrine", bw: true },
-  { src: p001_1.url, title: "Ganesha workshop", bw: true },
-  { src: p001_2v.url, title: "Naga head", bw: true },
   { src: p007_3.url, title: "Rahu close", bw: true },
   { src: p006_3.url, title: "Shrine cat 2", bw: true },
   { src: p005_3.url, title: "River shrine 2", bw: true },
