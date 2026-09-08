@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { photographs } from "@/data/photographs";
-import { Caption, Nav, INSTAGRAM_URL } from "@/components/reel-chrome";
+import { Caption, Nav } from "@/components/reel-chrome";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,98 +52,10 @@ function shuffledQueue(avoidFirst?: number): number[] {
 }
 
 function Page() {
-  const [ready, setReady] = useState(false);
-  const [progress, setProgress] = useState(0);
-
-  // Preload every photograph before the reel begins.
-  useEffect(() => {
-    let done = 0;
-    let cancelled = false;
-    const total = photographs.length;
-    const tick = () => {
-      if (cancelled) return;
-      done += 1;
-      setProgress(Math.round((done / total) * 100));
-      if (done >= total) setTimeout(() => !cancelled && setReady(true), 250);
-    };
-    photographs.forEach((p) => {
-      const img = new Image();
-      img.onload = tick;
-      img.onerror = tick;
-      img.src = p.src;
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  if (!ready) return <Loader progress={progress} />;
-  return <Scroller />;
-}
-
-function Loader({ progress }: { progress: number }) {
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-start bg-background p-[max(1.5rem,env(safe-area-inset-left))]">
-      <p className="reel-caption text-reel-accent tabular-nums">{progress}%</p>
-    </div>
-  );
-}
-
-function Scroller() {
-  return (
-    <div className="h-screen snap-y snap-mandatory overflow-y-scroll bg-background">
-      <section id="reel" className="relative h-screen w-full snap-start">
-        <Reel />
-      </section>
-
-      <section
-        id="drink-with-me"
-        className="relative flex h-screen w-full snap-start items-start bg-reel-accent px-[max(1.5rem,env(safe-area-inset-left))] py-[max(2rem,env(safe-area-inset-top))]"
-      >
-        <div className="max-w-xl space-y-6 text-sm leading-relaxed text-background">
-          <p className="font-semibold">Alice Locatelli</p>
-          <p>
-            <a
-              href="mailto:al.locatellialice@gmail.com"
-              className="underline underline-offset-4"
-            >
-              al.locatellialice@gmail.com
-            </a>
-          </p>
-          <p>
-            Instagram:{" "}
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="underline underline-offset-4"
-            >
-              ecila_locatelli
-            </a>
-          </p>
-          <p>
-            <a href="#reel" className="underline underline-offset-4">
-              Back to the photographs
-            </a>
-          </p>
-        </div>
-      </section>
-
-      <section className="min-h-screen w-full snap-start bg-background">
-        <div className="mx-auto flex max-w-xl flex-col">
-          {photographs.map((p) => (
-            <img
-              key={p.src}
-              src={p.src}
-              alt=""
-              loading="lazy"
-              decoding="async"
-              className="w-full object-cover"
-            />
-          ))}
-        </div>
-      </section>
-    </div>
+    <main className="fixed inset-0 overflow-hidden bg-background">
+      <Reel />
+    </main>
   );
 }
 
@@ -164,37 +76,24 @@ function Reel() {
     });
   }, []);
 
-  // Auto-advance, paused while the tab is hidden or the reel is scrolled away.
+  // Auto-advance, paused while the tab is hidden.
   useEffect(() => {
     let timer: ReturnType<typeof setInterval> | undefined;
-    let visibleOnScreen = true;
-    const stop = () => {
-      if (timer) clearInterval(timer);
-      timer = undefined;
-    };
     const sync = () => {
-      const active =
-        visibleOnScreen && document.visibilityState === "visible";
-      if (active) {
+      if (document.visibilityState === "visible") {
         if (!timer) timer = setInterval(advance, INTERVAL);
       } else {
-        stop();
+        if (timer) {
+          clearInterval(timer);
+          timer = undefined;
+        }
       }
     };
 
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        visibleOnScreen = (entry?.intersectionRatio ?? 0) > 0.5;
-        sync();
-      },
-      { threshold: [0, 0.5, 1] },
-    );
-    if (sectionRef.current) io.observe(sectionRef.current);
     document.addEventListener("visibilitychange", sync);
     sync();
     return () => {
-      stop();
-      io.disconnect();
+      if (timer) clearInterval(timer);
       document.removeEventListener("visibilitychange", sync);
     };
   }, [advance]);

@@ -3,8 +3,8 @@ export const INSTAGRAM_URL = "https://instagram.com/ecila_locatelli";
 export function Nav() {
   return (
     <nav className="absolute right-[max(1.5rem,env(safe-area-inset-right))] top-[max(1.5rem,env(safe-area-inset-top))] z-30 flex items-center gap-5 text-reel-accent">
-      <a href="#drink-with-me" className="reel-link">
-        Drink with me
+      <a href="/about" className="reel-link">
+        Come say hi
       </a>
     </nav>
   );

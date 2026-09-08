@@ -4,12 +4,12 @@ import { INSTAGRAM_URL } from "@/components/reel-chrome";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Drink with me — A Place on Google Earth" },
+      { title: "Come say hi — A Place on Google Earth" },
       {
         name: "description",
         content: "Contact Alice Locatelli.",
       },
-      { property: "og:title", content: "Drink with me — A Place on Google Earth" },
+      { property: "og:title", content: "Come say hi — A Place on Google Earth" },
       {
         property: "og:description",
         content: "Contact Alice Locatelli.",
