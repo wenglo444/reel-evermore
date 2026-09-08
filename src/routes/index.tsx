@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
   component: Page,
 });
 
-const INTERVAL = 800;
+const INTERVAL = 500;
 
 const bwIndexes = photographs
   .map((p, i) => (p.bw ? i : -1))
