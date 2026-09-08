@@ -96,7 +96,10 @@ function Scroller() {
         <Reel />
       </section>
 
-      <section className="relative flex h-screen w-full snap-start items-start bg-reel-accent px-[max(1.5rem,env(safe-area-inset-left))] py-[max(2rem,env(safe-area-inset-top))]">
+      <section
+        id="drink-with-me"
+        className="relative flex h-screen w-full snap-start items-start bg-reel-accent px-[max(1.5rem,env(safe-area-inset-left))] py-[max(2rem,env(safe-area-inset-top))]"
+      >
         <div className="max-w-xl space-y-6 text-sm leading-relaxed text-background">
           <p className="font-semibold">Alice Locatelli</p>
           <p>
