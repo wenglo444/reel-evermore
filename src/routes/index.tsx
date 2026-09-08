@@ -126,8 +126,8 @@ function Scroller() {
         </div>
       </section>
 
-      <section className="min-h-screen w-full snap-start bg-background p-[max(0.5rem,env(safe-area-inset-left))]">
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+      <section className="min-h-screen w-full snap-start bg-background">
+        <div className="mx-auto flex max-w-xl flex-col">
           {photographs.map((p) => (
             <img
               key={p.src}
@@ -135,7 +135,7 @@ function Scroller() {
               alt=""
               loading="lazy"
               decoding="async"
-              className="aspect-square w-full object-cover"
+              className="w-full object-cover"
             />
           ))}
         </div>
