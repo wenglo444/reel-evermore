@@ -92,7 +92,7 @@ function Loader({ progress }: { progress: number }) {
 function Scroller() {
   return (
     <div className="h-screen snap-y snap-mandatory overflow-y-scroll bg-background">
-      <section className="relative h-screen w-full snap-start">
+      <section id="reel" className="relative h-screen w-full snap-start">
         <Reel />
       </section>
 
@@ -122,9 +122,9 @@ function Scroller() {
             </a>
           </p>
           <p>
-            <Link to="/" className="underline underline-offset-4">
+            <a href="#reel" className="underline underline-offset-4">
               Back to the photographs
-            </Link>
+            </a>
           </p>
         </div>
       </section>
