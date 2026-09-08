@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { photographs } from "@/data/photographs";
 import { Caption, Nav, INSTAGRAM_URL } from "@/components/reel-chrome";
@@ -92,11 +92,14 @@ function Loader({ progress }: { progress: number }) {
 function Scroller() {
   return (
     <div className="h-screen snap-y snap-mandatory overflow-y-scroll bg-background">
-      <section className="relative h-screen w-full snap-start">
+      <section id="reel" className="relative h-screen w-full snap-start">
         <Reel />
       </section>
 
-      <section className="relative flex h-screen w-full snap-start items-start bg-reel-accent px-[max(1.5rem,env(safe-area-inset-left))] py-[max(2rem,env(safe-area-inset-top))]">
+      <section
+        id="drink-with-me"
+        className="relative flex h-screen w-full snap-start items-start bg-reel-accent px-[max(1.5rem,env(safe-area-inset-left))] py-[max(2rem,env(safe-area-inset-top))]"
+      >
         <div className="max-w-xl space-y-6 text-sm leading-relaxed text-background">
           <p className="font-semibold">Alice Locatelli</p>
           <p>
@@ -119,15 +122,15 @@ function Scroller() {
             </a>
           </p>
           <p>
-            <Link to="/" className="underline underline-offset-4">
+            <a href="#reel" className="underline underline-offset-4">
               Back to the photographs
-            </Link>
+            </a>
           </p>
         </div>
       </section>
 
-      <section className="min-h-screen w-full snap-start bg-background p-[max(0.5rem,env(safe-area-inset-left))]">
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+      <section className="min-h-screen w-full snap-start bg-background">
+        <div className="mx-auto flex max-w-xl flex-col">
           {photographs.map((p) => (
             <img
               key={p.src}
@@ -135,7 +138,7 @@ function Scroller() {
               alt=""
               loading="lazy"
               decoding="async"
-              className="aspect-square w-full object-cover"
+              className="w-full object-cover"
             />
           ))}
         </div>
