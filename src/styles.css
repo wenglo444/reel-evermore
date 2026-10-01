@@ -136,7 +136,7 @@
   /* Reel design system */
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.97 0 0);
-  --reel-accent: oklch(0.89 0.19 103);
+  --reel-accent: oklch(0.955 0.211 114.91); /* #EDFF21 */
   --font-reel: "Helvetica Neue", Helvetica, Arial, "Inter", system-ui, sans-serif;
 }
 
