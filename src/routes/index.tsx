@@ -53,23 +53,6 @@ function shuffle<T>(items: T[], avoidFirst?: T): T[] {
   return out;
 }
 
-// Shuffled order that always opens on a black-and-white photograph.
-function shuffledQueue(avoidFirst?: number): number[] {
-  const out = shuffle(photographs.map((_, i) => i), avoidFirst);
-  const first = out[0];
-  if (bwIndexes.length > 0 && first !== undefined && !photographs[first]?.bw) {
-    const candidates = bwIndexes.filter((i) => i !== avoidFirst);
-    const pick = candidates[Math.floor(Math.random() * candidates.length)];
-    if (pick === undefined) return out;
-    const at = out.indexOf(pick);
-    if (at >= 0) {
-      out[0] = pick;
-      out[at] = first;
-    }
-  }
-  return out;
-}
-
 function Page() {
   return (
     <main className="reel-page fixed inset-0 overflow-hidden bg-background">
@@ -102,12 +85,17 @@ function Reel() {
     let generation = 0;
 
     const advance = async (token: number) => {
+      const tickStarted = performance.now();
       const state = sequenceRef.current;
       const nextPos = (state.pos + 1) % state.queue.length;
       const nextIndex = state.queue[nextPos];
       if (nextIndex === undefined) return;
       const image = imageRefs.current.get(nextIndex);
-      if (image) {
+      if (!image) {
+        if (!stopped && token === generation) timer = setTimeout(() => void advance(token), INTERVAL);
+        return;
+      }
+      if (!image.complete || image.naturalWidth === 0) {
         try {
           await image.decode();
         } catch {
@@ -122,7 +110,7 @@ function Reel() {
         : { queue: state.queue, pos: nextPos };
       sequenceRef.current = next;
       setSequence(next);
-      timer = setTimeout(() => void advance(token), INTERVAL);
+      timer = setTimeout(() => void advance(token), Math.max(0, INTERVAL - (performance.now() - tickStarted)));
     };
 
     const sync = () => {
@@ -139,7 +127,7 @@ function Reel() {
     sync();
     return () => {
       stopped = true;
-      if (timer) clearInterval(timer);
+      if (timer) clearTimeout(timer);
       document.removeEventListener("visibilitychange", sync);
       motion.removeEventListener("change", sync);
     };

@@ -258,7 +258,7 @@
   }
 
   .contact-link {
-    display: inline-flex;
+    display: inline-block;
     position: relative;
     max-width: 100%;
     overflow-wrap: anywhere;
