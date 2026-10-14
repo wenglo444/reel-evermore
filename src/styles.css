@@ -185,3 +185,96 @@
   opacity: 0.55;
 }
 
+/* Preserve the desktop composition; compose the same three lines for mobile. */
+.reel-caption > span {
+  display: block;
+}
+
+.reel-link:focus-visible,
+.contact-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+@media (hover: none) {
+  .reel-link:hover {
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel-link {
+    transition: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  .reel-page {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .reel-caption {
+    container-type: inline-size;
+    padding-inline: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right));
+    font-size: 2rem;
+    letter-spacing: 0;
+  }
+
+  .reel-caption > span {
+    white-space: nowrap;
+    font-size: clamp(2rem, 12cqi, 6.5rem);
+  }
+
+  .reel-nav {
+    top: max(0.75rem, env(safe-area-inset-top));
+    right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .reel-link {
+    display: inline-flex;
+    min-height: 44px;
+    min-width: 44px;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 0.5rem;
+  }
+
+  .contact-page {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+
+  .contact-page > div {
+    min-width: 0;
+  }
+
+  .contact-link {
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  /* Larger touch area without moving the contact text or changing its rhythm. */
+  .contact-link::after {
+    content: "";
+    position: absolute;
+    inset: -11px -4px;
+  }
+}
+
+@media (max-width: 1023px) and (max-height: 480px) and (orientation: landscape) {
+  .reel-caption > span {
+    font-size: min(12cqi, 4.5rem, 17dvh);
+  }
+}
+

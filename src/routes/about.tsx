@@ -14,6 +14,8 @@ export const Route = createFileRoute("/about")({
         property: "og:description",
         content: "Contact Alice Locatelli.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: About,
@@ -21,11 +23,11 @@ export const Route = createFileRoute("/about")({
 
 function About() {
   return (
-    <main className="min-h-screen bg-reel-accent px-[max(1.5rem,env(safe-area-inset-left))] py-[max(2rem,env(safe-area-inset-top))]">
+    <main className="contact-page min-h-screen bg-reel-accent px-[max(1.5rem,env(safe-area-inset-left))] py-[max(2rem,env(safe-area-inset-top))]">
       <div className="max-w-xl space-y-6 text-sm leading-relaxed text-background">
         <p className="font-semibold">Alice Locatelli</p>
         <p>
-          <a href="mailto:al.locatellialice@gmail.com" className="underline underline-offset-4">
+          <a href="mailto:al.locatellialice@gmail.com" className="contact-link underline underline-offset-4">
             al.locatellialice@gmail.com
           </a>
         </p>
@@ -35,13 +37,13 @@ function About() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noreferrer noopener"
-            className="underline underline-offset-4"
+            className="contact-link underline underline-offset-4"
           >
             ecila_locatelli
           </a>
         </p>
         <p>
-          <Link to="/" className="underline underline-offset-4">
+          <Link to="/" className="contact-link underline underline-offset-4">
             Back to the photographs
           </Link>
         </p>
